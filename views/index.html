@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Tablero de mensajes anonimos</title>
+    <link rel="stylesheet" href="/public/style.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <section class="panel">
+        <h1>Tablero de mensajes anonimos</h1>
+        <form action="/api/threads/general" method="post">
+          <label for="thread-text">Nuevo hilo</label>
+          <textarea id="thread-text" name="text" rows="5" required></textarea>
+          <label for="thread-password">Contrasena para borrar</label>
+          <input id="thread-password" name="delete_password" type="password" required />
+          <button type="submit">Publicar hilo</button>
+        </form>
+      </section>
+      <section class="panel">
+        <h2>API</h2>
+        <p>Usa el tablero <strong>general</strong> o cambia el nombre en la ruta.</p>
+        <ul>
+          <li><code>GET /api/threads/general</code></li>
+          <li><code>GET /api/replies/general?thread_id={id}</code></li>
+        </ul>
+      </section>
+    </main>
+  </body>
+</html>
